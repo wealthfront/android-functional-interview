@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="com.wealthfront.recipebrowser"
+    package="com.wealthfront.android_functional_interview"
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
 
   <application
       android:allowBackup="true"
-      android:icon="@drawable/ic_launcher"
+      android:icon="@drawable/ic_launcher_foreground"
       android:label="@string/app_name"
       android:supportsRtl="true"
       android:theme="@style/Theme.AppCompat.Light.NoActionBar"
       >
-    <activity android:name="com.wealthfront.recipebrowser.MainActivity">
+    <activity android:name="com.wealthfront.android_functional_interview.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 
