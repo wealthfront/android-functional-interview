@@ -32,12 +32,8 @@ android {
   }
   flavorDimensions.add("language")
   productFlavors {
-    java {
-
-    }
-    kotlin {
-
-    }
+    register("java")
+    register("kotlin")
   }
   kotlinOptions {
     jvmTarget = "1.8"
