@@ -30,6 +30,15 @@ android {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
   }
+  flavorDimensions.add("language")
+  productFlavors {
+    java {
+
+    }
+    kotlin {
+
+    }
+  }
   kotlinOptions {
     jvmTarget = "1.8"
   }
