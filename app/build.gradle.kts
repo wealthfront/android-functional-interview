@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-  namespace = "com.wealthfront.android_functional_interview"
+  namespace = "com.wealthfront.recipebrowser"
   compileSdk = 34
 
   defaultConfig {
@@ -32,8 +32,15 @@ android {
   }
   flavorDimensions.add("language")
   productFlavors {
-    register("java")
-    register("kotlin")
+    register("java") {
+      dependencies {
+        implementation(libs.rxjava)
+        implementation(libs.retrofit.rxjava)
+      }
+    }
+    register("kotlin") {
+      isDefault = true
+    }
   }
   kotlinOptions {
     jvmTarget = "1.8"
@@ -52,21 +59,6 @@ android {
 }
 
 dependencies {
-
-  // implementation fileTree(include: ['*.jar'], dir: 'libs')
-  // implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.kotlin_version"
-  // implementation 'androidx.appcompat:appcompat:1.5.0'
-  // implementation "com.google.android.material:material:1.6.1"
-  // implementation 'androidx.core:core-ktx:1.8.0'
-  // implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
-  // implementation "com.squareup.retrofit2:retrofit-mock:$retrofitVersion"
-  // implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
-  // implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
-  // testImplementation 'junit:junit:4.13.2'
-  // testImplementation "com.google.truth:truth:$truthVersion"
-  // androidTestImplementation 'androidx.test:runner:1.4.0'
-  // androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-  //
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.lifecycle.runtime.ktx)
   implementation(libs.androidx.activity.compose)
@@ -75,7 +67,11 @@ dependencies {
   implementation(libs.androidx.ui.graphics)
   implementation(libs.androidx.ui.tooling.preview)
   implementation(libs.androidx.material3)
+  implementation(libs.androidx.recyclerview)
+  implementation(libs.retrofit)
+  implementation(libs.retrofit.mock)
   testImplementation(libs.junit)
+  testImplementation(libs.truth)
   androidTestImplementation(libs.androidx.junit)
   androidTestImplementation(libs.androidx.espresso.core)
   androidTestImplementation(platform(libs.androidx.compose.bom))
