@@ -30,16 +30,25 @@ android {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
   }
-  flavorDimensions.add("language")
+  flavorDimensions += listOf("language", "ui")
   productFlavors {
     register("java") {
       dependencies {
         implementation(libs.rxjava)
         implementation(libs.retrofit.rxjava)
       }
+      dimension = "language"
     }
     register("kotlin") {
       isDefault = true
+      dimension = "language"
+    }
+    register("androidViews") {
+      isDefault = true
+      dimension = "ui"
+    }
+    register("compose") {
+      dimension = "ui"
     }
   }
   kotlinOptions {
