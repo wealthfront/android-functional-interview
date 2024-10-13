@@ -32,33 +32,14 @@ android {
     targetCompatibility = JavaVersion.VERSION_1_8
   }
 
-  flavorDimensions += listOf("language", "ui")
+  flavorDimensions += listOf("ui")
   productFlavors {
-    register("java") {
-      dependencies {
-        implementation(libs.rxjava)
-        implementation(libs.retrofit.rxjava)
-      }
-      dimension = "language"
-    }
-    register("kotlin") {
-      isDefault = true
-      dimension = "language"
-    }
     register("androidViews") {
       isDefault = true
       dimension = "ui"
     }
     register("compose") {
       dimension = "ui"
-    }
-  }
-
-  androidComponents {
-    beforeVariants { variantBuilder ->
-      if (variantBuilder.productFlavors.containsAll(listOf("language" to "java", "ui" to "compose"))) {
-        variantBuilder.enable = false
-      }
     }
   }
 
