@@ -1,16 +1,17 @@
 plugins {
   alias(libs.plugins.androidApplication)
   alias(libs.plugins.jetbrainsKotlinAndroid)
+  alias(libs.plugins.kotlinCompose)
 }
 
 android {
   namespace = "com.wealthfront.recipebrowser"
-  compileSdk = 34
+  compileSdk = 36
 
   defaultConfig {
     applicationId = "com.wealthfront.android_functional_interview"
     minSdk = 26
-    targetSdk = 34
+    targetSdk = 36
     versionCode = 1
     versionName = "1.0"
 
