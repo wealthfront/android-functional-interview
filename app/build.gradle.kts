@@ -1,6 +1,5 @@
 plugins {
   alias(libs.plugins.androidApplication)
-  alias(libs.plugins.jetbrainsKotlinAndroid)
   alias(libs.plugins.kotlinCompose)
 }
 
@@ -44,16 +43,8 @@ android {
     }
   }
 
-  kotlinOptions {
-    jvmTarget = "1.8"
-  }
-
   buildFeatures {
     compose = true
-  }
-
-  composeOptions {
-    kotlinCompilerExtensionVersion = "1.5.1"
   }
 
   packaging {

@@ -37,6 +37,5 @@ retrofit-rxjava = { group = "com.squareup.retrofit2", name = "adapter-rxjava2", 
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
-jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlinCompose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
